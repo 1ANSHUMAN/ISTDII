@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ISTDII Know about Astronomy</title>
+    <title>ISTDII</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
-        body {
-            background-color: black;
+        body{
+            background-image: url("c:\Users\k_sam\Downloads\ISTDII OFFICIAL LOGO 2024-25.jpg");
             color: rgb(177, 240, 240);
             border-style: groove;
-            margin: 0; /* Reset default body margin */
         }
-
         * {
             background-color: black;
-            margin: 0; /* Consistent margin reset */
-            padding: 0; /* Consistent padding reset */
+            margin: 1;
+            padding: 0;
             box-sizing: border-box;
         }
 
@@ -63,59 +61,117 @@
             width: 10px;
             height: 10px;
         }
-
-        h1 {
+        h1{
             text-align: center;
         }
-
-        h4 {
+        h4{
             text-align: center;
-        }
+                        }
+                        .A1{
+                            color: azure;
+                            text-align: center;
+                            font-size: medium;
+                        }
+                        .tab-container {
+                            display: flex; /* Enable flex container */
+                            list-style: none; /* Remove default list styling if using <ul> */
+                            padding: 0;
+                            margin: 0;
+                        }
 
-        .A1 {
-            color: azure;
-            text-align: center;
-            font-size: medium;
-        }
+                        .tab-container li a { /* If using <li> elements */
+                            display: block; /* Make the anchor fill the list item */
+                            padding: 10px 15px;
+                            text-decoration: none;
+                            background-color: #f0f0f0;
+                            border: 1px solid #ccc;
+                            margin-right: 5px;
+                        }
 
-        .tab-container {
-            display: flex; /* Enable flex container */
-            list-style: none; /* Remove default list styling if using <ul> */
-            padding: 0;
-            margin: 0;
-            justify-content: center; /* Center the tabs */
-        }
+                        .tab-container li:last-child a {
+                            margin-right: 0;
+                        }
 
-        .tab-container li a { /* If using <li> elements */
-            display: block; /* Make the anchor fill the list item */
-            padding: 10px 15px;
-            text-decoration: none;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            margin-right: 5px;
-            color: black; /* Set link color */
-        }
+                        /* If not using <li>, target the direct children (e.g., <a>) */
+                        .tab-container > a {
+                            padding: 10px 15px;
+                            text-decoration: none;
+                            background-color: #f0f0f0;
+                            border: 1px solid #ccc;
+                            margin-right: 5px;
+                        }
 
-        .tab-container li:last-child a {
-            margin-right: 0;
-        }
-
-        /* If not using <li>, target the direct children (e.g., <a>) */
-        .tab-container > a {
-            padding: 10px 15px;
-            text-decoration: none;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            margin-right: 5px;
-            color: black; /* Set link color */
-        }
-
-        .tab-container > a:last-child {
-            margin-right: 0;
-        }
+                        .tab-container > a:last-child {
+                            margin-right:15%;
+                        }
+                        img{
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
     </style>
+
 </head>
 <body>
+
+    <h2>Content from MAIN PAGE</h2>
+    <div class="box""tab-container">
+        <button id="glowButton"><a href="ISTDII.html">HOME</a></button>
+        <button id="glowButton"><a href="KNOW ABOUT ASTRONOMY.html">ABOUT ASTRONOMY</a></button>
+        <button id="glowButton"><a href="ABOUT us.html">ABOUT US</a></button>
+    </div>
+    <h1>INTER SPACE TECHNOLOGY DEVELOPING INSTITUTE OF INDIA</h1>
+    <h4>The Secret of sucess</h4>
+    <p class="A1">ASTRONOMY IS NOT A WAY TO GET MONEY.  IT IS A Ambition AND FITURE OF MANY PEOPLE. IT IS NOT A STUDY IT IS THE STUDY.</p>
+    <img src="c:\Users\k_sam\Downloads\ISTDII.html\Screenshot 2025-04-26 214055.png"
+    class="ISTDIILOGO" width="350px" height="300px">
+    <script>
+        const button = document.getElementById("glowButton");
+        let stars = [];
+
+        button.addEventListener("mouseover", () => {
+            removeStars();
+            for (let i = 0; i < 5; i++) {
+                let star = document.createElement("div");
+                star.classList.add("stars");
+                if (Math.random() > 0.5) star.classList.add("large");
+                document.body.appendChild(star);
+
+                let buttonRect = button.getBoundingClientRect();
+                let startX = Math.random() * buttonRect.width + buttonRect.left;
+                let startY = Math.random() * buttonRect.height + buttonRect.top;
+
+                star.style.left = `${startX}px`;
+                star.style.top = `${startY}px`;
+
+                setTimeout(() => {
+                    let angle = Math.random() * 2 * Math.PI;
+                    let distance = Math.random() * 50 + 20;
+                    let moveX = Math.cos(angle) * distance;
+                    let moveY = Math.sin(angle) * distance;
+                    star.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
+                    star.style.opacity = "1";
+                }, 50);
+
+                stars.push(star);
+            }
+        });
+
+        button.addEventListener("mouseleave", () => {
+            removeStars();
+        });
+
+        function removeStars() {
+            stars.forEach(star => {
+                star.style.opacity = "0";
+                setTimeout(() => star.remove(), 500);
+            });
+            stars = [];
+        }
+    </script>
+
+    <hr>
+    <h2>Content from 2nd page</h2>
     <div class="box">
         <ul class="tab-container">
             <li><button id="glowButton"><a href="ISTDII.html">HOME</a></button></li>
@@ -177,26 +233,4 @@
     <p>The landscape of space exploration and research is increasingly shaped by policy decisions and international partnerships:</p>
     <ul>
         <li><b>Artemis Program Updates</b>: NASA's Artemis program, aiming to return humans to the Moon, continues to make progress. Recent discussions have focused on the development of sustainable lunar infrastructure and the involvement of international partners, including the <i>European Space Agency (ESA)</i> and the Canadian Space Agency <i>(CSA)</i>, in future missions. The timeline for the crewed <i>Artemis III mission,</i> targeting a lunar south pole landing, remains a key point of discussion.</li>
-        <li><b>International Space Station <i>(ISS)</i> Extension</b>: There are ongoing deliberations among the participating nations regarding the extension of the ISS beyond its currently planned retirement date. The station continues to serve as a crucial platform for scientific research in microgravity and as a stepping stone for deep space exploration.</li>
-        <li><b>Space Debris Mitigation Efforts</b>: The growing problem of space debris remains a significant concern. International collaborations are focusing on developing strategies for tracking, managing, and mitigating the risks posed by defunct satellites and other orbital debris. Recent discussions have highlighted the need for stricter regulations and the development of active debris removal technologies.</li>
-        <li><b>Commercial Space Sector Growth</b>: The commercial space sector continues its rapid expansion, with companies involved in satellite constellations, space tourism, and lunar resource utilization. Regulatory frameworks are evolving to accommodate this growth while ensuring safety and sustainability. Recent debates have centered on spectrum allocation for satellite internet services and the environmental impact of increased launch activities.</li>
-        <li><b>India's Gaganyaan Program Progress</b>: India's human spaceflight program, Gaganyaan, is making steady advancements. Recent updates include successful tests of critical technologies and astronaut training activities. The program aims to send Indian astronauts into low Earth orbit using an indigenously developed spacecraft and launch vehicle.</li>
-    </ul>
-
-    <h1>Public Engagement and Outreach</h1>
-    <p>Astronomy continues to capture the public imagination, with various initiatives aimed at engaging and educating:</p>
-    <ul>
-        <li><b>Global Astronomy Month</b>: April is designated as Global Astronomy Month, with numerous events organized worldwide to promote astronomy and space science. These include virtual telescope viewings, online lectures, citizen science projects, and stargazing parties (where weather and local regulations permit).</li>
-        <li><b>Online Astronomy Resources</b>: The availability of high-quality astronomical images, data, and educational resources online continues to grow. Observatories and space agencies are increasingly leveraging digital platforms to share their discoveries and engage with the public. Recent examples include interactive star charts, virtual museum tours of space missions, and live Q&A sessions with astronomers.</li>
-        <li><b>Citizen Science Initiatives</b>: Citizen science projects in astronomy are thriving, allowing amateur astronomers to contribute to real scientific research. These projects range from classifying galaxies in telescope images to searching for exoplanets in light curve data. Recent projects have focused on analyzing data from the Transiting Exoplanet Survey Satellite (TESS) and identifying potential gravitational wave events.</li>
-        <li><b>Space-Themed Entertainment and Education</b>: Documentaries, films, and educational programs focused on space exploration and astronomy remain popular, inspiring the next generation of scientists and engineers. Recent releases have highlighted the James Webb Space Telescope's discoveries and the challenges of long-duration spaceflight.</li>
-    </ul>
-
-    <h1>The Search for Extraterrestrial Life</h1>
-    <p>The quest to understand our place in the universe and the potential for life beyond Earth remains a driving force in astronomy:</p>
-    <ul>
-        <li><b>Continued Exoplanet Discoveries</b>: The ongoing discovery of diverse exoplanets, including rocky worlds in habitable zones, fuels the search for extraterrestrial life. Telescopes like TESS and the James Webb Space Telescope are playing a crucial role in characterizing these distant worlds and searching for biosignatures in their atmospheres.</li>
-        <li><b>Advancements in Biosignature Detection</b>: Scientists are actively developing new methods and technologies for detecting potential signs of life on other planets. This includes studying the types of gases that could indicate biological activity and planning future
-        </li></ul>
-</body>
-</html>
+        <li><b>International Space Station <i>(ISS)</i> Extension</b>
